@@ -1,6 +1,8 @@
+// ignore: unused_import
 import 'dart:io';
 
 void main() {
+  /*
   // 1) Dando um "oi" para o mundo
   print("Hello, World!");
   print("---------------------------------");
@@ -117,4 +119,83 @@ void main() {
 
   print("O cliente receberá $cupons cupom(s) para esta compra.");
   print("---------------------------------");
+  
+
+  // 9) Calculando idade para carteira de motorista
+  int years = int.parse(stdin.readLineSync()!);
+
+  if (years >= 18){
+    print("Idade: $years anos, Permitida para tirar carteira de habilitação!");
+  } else {
+    print("Idade: $years anos. Não permitida para tirar habilitação!");
+  }
+  
+
+  // 10) Retornando os meses do ano
+  print("Informe de 1 a 12, qual mês do ano deve retornar!");
+  int num = int.parse(stdin.readLineSync()!);
+
+  switch (num) {
+    case 1:
+      print("Janeiro");
+    case 2:
+      print("Fevereiro");
+    case 3:
+      print("Março");
+    case 4:
+      print("Abril");
+    case 5:
+      print("Maio");
+    case 6:
+      print("Junho");
+    case 7:
+      print("Julho");
+    case 8:
+      print("Agosto");
+    case 9:
+      print("Setembro");
+    case 10:
+      print("Outubro");
+    case 11:
+      print("Novembro");
+    case 12:
+      print("Dezembro");
+    
+    break;
+  }
+  
+
+  // 11) Implementando a verificação de saldo
+  double saldo = 1000.0; // Saldo inicial em reais
+
+  print('Boas-vindas ao seu banco digital!');
+  print('Seu saldo atual é de: R\$${saldo.toStringAsFixed(2)}');
+
+  print('Digite o valor do Pix que deseja realizar:');
+  double valorPix = double.parse(stdin.readLineSync()!);
+
+  if (valorPix > saldo) {
+    print("O valor de R\$${valorPix.toStringAsFixed(2)} é superior ao seu saldo atual!");
+  } else {
+    print(saldo - valorPix);
+  }
+  
+
+  // 12) Verificando a maioridade em diferente países
+  print("Informe sua idade: ");
+  int idadeUser = int.parse(stdin.readLineSync()!);
+  
+  print("Informe o seu país: (Brasil/Japão/EUA)");
+  String pais = stdin.readLineSync()!;
+
+  if(pais == "Brasil" && idadeUser >= 18){
+    print("Liberado para dirigir");
+  } else if (pais == "Japão" && idadeUser >= 20){
+    print("Liberado para dirigir");
+  } else if (pais == "EUA" && idadeUser >= 16){
+    print("Liberado para dirigir");
+  } else {
+    print("Não liberado para dirigir");
+  }
+  */
 }
