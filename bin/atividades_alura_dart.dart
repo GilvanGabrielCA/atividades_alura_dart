@@ -129,7 +129,7 @@ void main() {
   } else {
     print("Idade: $years anos. Não permitida para tirar habilitação!");
   }
-  
+  print("---------------------------------");
 
   // 10) Retornando os meses do ano
   print("Informe de 1 a 12, qual mês do ano deve retornar!");
@@ -163,6 +163,7 @@ void main() {
     
     break;
   }
+  print("---------------------------------");
   
 
   // 11) Implementando a verificação de saldo
@@ -179,7 +180,7 @@ void main() {
   } else {
     print(saldo - valorPix);
   }
-  
+  print("---------------------------------");
 
   // 12) Verificando a maioridade em diferente países
   print("Informe sua idade: ");
@@ -197,5 +198,195 @@ void main() {
   } else {
     print("Não liberado para dirigir");
   }
+  print("---------------------------------");
+  
+
+  // 13) Validação de categorias de produtos em um sistema de estoque
+  List<String> categorias = <String>[
+    "eletronicos",
+    "alimentos",
+    "vestuario",
+    "livros"
+  ];
+  List<String> eletronicos = <String>[];
+  List<String> alimentos = <String>[];
+  List<String> vestuario = <String>[];
+  List<String> livros = <String>[];
+  String? categoriaProduto = "";
+  String? nomeProduto = "";
+
+  void getNomeProduto() {
+    print("Qual nome do produto?");
+    nomeProduto = stdin.readLineSync();
+  }
+
+  void getProduto() {
+    switch (categoriaProduto) {
+      case "eletronicos":
+        getNomeProduto();
+        eletronicos.add(nomeProduto!);
+      case "alimentos":
+        getNomeProduto();
+        alimentos.add(nomeProduto!);
+      case "vestuario":
+        getNomeProduto();
+        vestuario.add(nomeProduto!);
+      case "livros":
+        getNomeProduto();
+        livros.add(nomeProduto!);
+    }
+  }
+
+  void getListas(){
+    print("Eletronicos: ${eletronicos.toString()}");
+    print("Alimentos: ${alimentos.toString()}");
+    print("Vestuario: ${vestuario.toString()}");
+    print("Livros: ${livros.toString()}");
+  }
+
+  void getCategoria() {
+    print("Digite a categoria do produto");
+    categoriaProduto = stdin.readLineSync();
+
+    if (categoriaProduto != null) {
+      if (categorias.contains(categoriaProduto)) {
+        getProduto();
+      } else {
+        print("Categoria invalida! Digite novamente!");
+        getCategoria();
+      }
+    }
+  }
+
+  for (int i = 0; i < 5; i++){
+    getCategoria();
+  }
+
+  print("");
+
+  getListas();
+  print("---------------------------------");
+
+  // 14) Validação de tipos de arquivos em um sistema de upload
+  String? tipoArquivo = "";
+  List<String> tipos = <String> ["pdf", "jpg", "png", "docx"];
+
+  void getArquivo(){
+    print("Qual o tipo de arquivo que será enviado? ${tipos.toString()}");
+    tipoArquivo = stdin.readLineSync();
+
+    if(tipoArquivo != null){
+      if(tipos.contains(tipoArquivo)){
+        print("Formato valido!");
+      } else {
+        print("Formato invalido!");        
+        getArquivo();
+      }
+    }
+    
+  }
+
+  getArquivo();
+  print("---------------------------------");
+
+  // 15)  Dando uma nova chance no retorno de mês
+  void solicitarNumero() {
+    print('Digite um número de 1 a 12 para saber o mês correspondente:');
+    String? input = stdin.readLineSync();
+
+    int numero;
+    if (input == null) {
+      print('Entrada inválida. Por favor, insira um número válido.');
+      solicitarNumero();
+      return;
+    }
+
+    // Função que retorna o mês correspondente
+  String obterMes(int numero) {
+    switch (numero) {
+      case 1:
+        return 'Janeiro';
+      case 2:
+        return 'Fevereiro';
+      case 3:
+        return 'Março';
+      case 4:
+        return 'Abril';
+      case 5:
+        return 'Maio';
+      case 6:
+        return 'Junho';
+      case 7:
+        return 'Julho';
+      case 8:
+        return 'Agosto';
+      case 9:
+        return 'Setembro';
+      case 10:
+        return 'Outubro';
+      case 11:
+        return 'Novembro';
+      case 12:
+        return 'Dezembro';
+      default:
+        return 'Número inválido. Por favor, insira um número de 1 a 12.';
+    }
+  }
+
+    numero = int.parse(input);
+
+    String mes = obterMes(numero);
+    print(mes);
+
+    if (mes == 'Número inválido. Por favor, insira um número de 1 a 12.') {
+      solicitarNumero();
+    }
+  }
+
+  solicitarNumero();
+  print("---------------------------------");
+
+  // 16) Criando a função de depósito e fazendo sua validação
+  List<String> operacao = <String> ["deposito", "retirada", "transferencia", "pagamento"];
+  String? opUser = "";
+
+  void getOperacao(){
+    print("Digite uma operação ${operacao.toString()}");
+    opUser = stdin.readLineSync();
+
+    if(opUser != null){
+      if(operacao.contains(opUser)){
+        print("Qual o valor da operação de $opUser?");
+        double valor = double.parse(stdin.readLineSync()!);
+        print("Operação escolhida $opUser, valor R\$${valor.toStringAsFixed(2)}");
+      } else {
+        print("Operação inválida. Tente novamente.");
+        getOperacao();
+      }
+    }
+  }
+
+  getOperacao();
+  print("---------------------------------");
   */
+
+  // 17) Validação de métodos de pagamento em uma plataforma de e-commerce
+  List<String> tipoPagamento = <String> ["cartao", "boleto", "paypal", "pix"];
+  String? solicitacao = "";
+
+  void getMetodo(){
+    print("Qual a forma de pagamento? ${tipoPagamento.toString()}");
+    solicitacao = stdin.readLineSync();
+
+    if(solicitacao != null){
+      if(tipoPagamento.contains(solicitacao)){
+        print("Forma de pagamento: $solicitacao");
+      } else {
+        print("Forma de pagamento invalida!");
+        getMetodo();
+      }
+    }
+  }
+
+  getMetodo();
 }
