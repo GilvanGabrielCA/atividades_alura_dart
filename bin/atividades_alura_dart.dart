@@ -368,7 +368,6 @@ void main() {
 
   getOperacao();
   print("---------------------------------");
-  */
 
   // 17) Validação de métodos de pagamento em uma plataforma de e-commerce
   List<String> tipoPagamento = <String> ["cartao", "boleto", "paypal", "pix"];
@@ -389,4 +388,31 @@ void main() {
   }
 
   getMetodo();
+  print("---------------------------------");
+  
+
+  // 18) Imprimindo números no terminal
+  for (var i = 1; i <= 5; i ++){
+    print(i);
+  }
+  print("---------------------------------");
+
+  // 19) Mostrando nomes no terminal
+  List<String> nomes = <String>["Ana", "João", "Maria"];
+
+  for (var i = 0; i < nomes.length; i++){
+    print("Nome: ${nomes[i]}");
+  }
+  print("---------------------------------");
+
+  // 20) Em busca da parada
+  String texto = "Parou! Este código não continua.";
+  int index = 0;
+
+  do {
+    print(texto[index]);
+    index++;
+  } while (index < texto.length && texto[index - 1] != "!");
+  print("---------------------------------");
+  */
 }
